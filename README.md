@@ -1,36 +1,210 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Find Nearest Specialist Doctors 🏥
 
-## Getting Started
+A modern healthcare platform that helps users find nearby specialist doctors, explore doctor profiles, check availability, and book appointments easily.
 
-First, run the development server:
+The platform is designed to connect patients with qualified healthcare professionals through an intuitive search-based experience with location-aware doctor discovery.
+
+---
+
+## 🚀 Project Overview
+
+**Find Nearest Specialist Doctors** is a full-stack healthcare web application built to simplify the process of finding and consulting specialist doctors.
+
+Users will be able to:
+
+- Search doctors by specialization
+- Find doctors near their location
+- View detailed doctor profiles
+- Check hospital information
+- View doctor availability
+- Book appointments
+- Submit reviews and ratings
+
+The application focuses on creating a scalable healthcare ecosystem with a clean user experience.
+
+---
+
+# ✨ Key Features
+
+## 👨‍⚕️ Doctor Discovery
+
+- Browse specialist doctors
+- Search by medical specialization
+- View doctor information
+- Find nearby doctors using location data
+
+## 🏥 Hospital Information
+
+- Hospital profiles
+- Doctor-hospital relationships
+- Chamber information
+- Location-based hospital discovery
+
+## 📅 Appointment Management
+
+- Patient appointment booking
+- Doctor availability management
+- Appointment status tracking
+
+## ⭐ Review System
+
+- Patient reviews
+- Doctor ratings
+- Feedback management
+
+## 🔐 Authentication & User Management
+
+- Secure user authentication
+- Patient profiles
+- Doctor profiles
+- Role-based user management
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
+- Next.js 16
+- React
+- TypeScript
+- Tailwind CSS
+
+## Backend
+
+- Next.js Server Components
+- Supabase
+
+## Database
+
+- PostgreSQL (Supabase)
+
+## Authentication
+
+- Supabase Authentication
+
+## Development Tools
+
+- Git
+- GitHub
+- VS Code
+
+---
+
+# 🗄️ Database Design
+
+The application uses a relational PostgreSQL database managed through Supabase.
+
+## Database Tables
+
+### Doctors
+
+Stores doctor information:
+
+- Name
+- Degree
+- Experience
+- Contact information
+- Location
+
+### Specializations
+
+Stores medical specialties:
+
+Examples:
+
+- Cardiology
+- Neurology
+- Dermatology
+- Orthopedics
+
+### Hospitals
+
+Stores hospital information:
+
+- Hospital name
+- Address
+- Location coordinates
+
+### Doctor-Hospital Relationship
+
+Manages:
+
+- Doctors working at hospitals
+- Chamber schedules
+
+### Doctor Availability
+
+Stores:
+
+- Available days
+- Consultation time
+
+### Profiles
+
+Stores user profile information:
+
+- Patient
+- Doctor
+- Admin
+
+### Appointments
+
+Handles:
+
+- Patient booking
+- Doctor consultation schedule
+- Appointment status
+
+### Reviews
+
+Handles:
+
+- Doctor ratings
+- Patient feedback
+
+---
+
+# 🔗 Current Development Status
+
+## Completed ✅
+
+- Next.js project setup
+- Supabase integration
+- Database architecture design
+- Doctor database implementation
+- Hospital database implementation
+- Specialist category management
+- Doctor-hospital relationships
+- Doctor availability system
+- User profile database
+- Appointment database
+- Review database
+- Supabase connection testing
+
+## In Progress 🚧
+
+- Doctor listing UI
+- Doctor profile page
+- Search functionality
+- Location-based doctor finding
+
+## Upcoming Features 📌
+
+- User authentication UI
+- Patient dashboard
+- Doctor dashboard
+- Appointment booking interface
+- Google Maps integration
+- Advanced doctor filtering
+- Notification system
+
+---
+
+# ⚙️ Installation & Setup
+
+## Clone Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AbrarMojahidRafi/find-nearest-specialist-doctors.git
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
