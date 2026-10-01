@@ -8,32 +8,36 @@ export default async function DoctorProfilePage({
 }) {
     const { id } = await params;
 
-    console.log("Doctor ID:", id);
-
     const { data: doctor, error } = await supabase
         .from("doctors")
         .select(
             `
-            *,
-            specializations(
-                name
-            ),
-            doctor_availability(
-                id,
-                day,
-                start_time,
-                end_time
-            )
-            `,
+        *,
+        specializations(
+            name
+        ),
+        doctor_availability!doctor_id(
+            id,
+            day,
+            start_time,
+            end_time
+        )
+        `,
         )
         .eq("id", id)
         .single();
 
-    console.log("Doctor Data:", doctor);
-
-    console.log("Availability:", doctor?.doctor_availability);
-
-    console.log("Doctor Error:", error);
+    const { data: availability, error: availabilityError } = await supabase
+        .from("doctor_availability")
+        .select(
+            `
+                id,
+                day,
+                start_time,
+                end_time
+            `,
+        )
+        .eq("doctor_id", id);
 
     if (!doctor) {
         return (
@@ -54,16 +58,10 @@ export default async function DoctorProfilePage({
                 p-8
                 shadow
                 ">
-                <h1
-                    className="
-                    text-4xl
-                    font-bold
-                    ">
-                    {doctor.name}
-                </h1>
+                <h1 className="text-4xl font-bold">{doctor.name}</h1>
 
                 <p className="mt-4">
-                    Specialist: {doctor.specializations?.name}
+                    Specialist: {doctor.specializations?.name ?? "N/A"}
                 </p>
 
                 <p>Degree: {doctor.degree}</p>
@@ -72,7 +70,7 @@ export default async function DoctorProfilePage({
 
                 <p>Hospital: {doctor.hospital}</p>
 
-                <DoctorAvailability availability={doctor.doctor_availability} />
+                <DoctorAvailability availability={availability ?? []} />
 
                 <button
                     className="
